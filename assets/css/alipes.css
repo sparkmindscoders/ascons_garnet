@@ -9451,7 +9451,7 @@ padding-top: 110px;
 }
 
 .testimonial-two__client-name {
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   text-transform: uppercase;
   line-height: 50px;
@@ -12528,7 +12528,9 @@ body.boxed-wrapper {
 
 }
 
-
+.submit-b{
+  padding: 10px 20px;
+}
 
 
 @media (max-width: 1440px) {
