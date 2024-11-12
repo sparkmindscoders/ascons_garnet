@@ -12939,3 +12939,80 @@ z-index: 100000;
   }
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.banner-form {
+  padding: 1rem;
+  background-color:rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-slider-two__content {
+  padding: 2rem;
+  color: #333; /* Adjust text color */
+}
+
+/* Contact Form Styling */
+.banner-form h5 {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: white !important;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+ background-color: rgb(0, 0, 0);
+}
+
+.submit-b {
+  background-color:var(--alipes-base); /* Button color */
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .main-slider-two__content, .banner-form {
+    text-align: center;
+  }
+  .col-xl-8, .col-xl-4 {
+    width: 100%;
+  }
+  .swiper-slide .row {
+    flex-direction: column;
+  }
+}
+
+
+
+
