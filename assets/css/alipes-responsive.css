@@ -1039,14 +1039,14 @@
 
 @media only screen and (min-width: 1375px) and (max-width: 1575px) {
   .main-menu-two__logo {
-    margin-right: 60px;
+    margin-right: 95px;
     margin-left: 10PX;
   }
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1460px) {
   .main-menu-two__logo {
-    margin-right: 90px;
+    margin-right: 60px;
   }
   /* .main-menu-two__btn-box {
     display: none;
