@@ -1002,7 +1002,8 @@
     flex: 1;
   }
   .main-slider-two__title {
-    font-size: 64px;
+    /* font-size: 64px; */
+    font-size: 34px;
     line-height: 64px;
   }
   .main-slider-two__text br {
