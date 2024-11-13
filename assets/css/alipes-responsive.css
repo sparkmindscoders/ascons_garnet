@@ -1010,7 +1010,8 @@
     display: none;
   }
   .main-slider-two .container {
-    padding-top: 306px;
+    padding-top: 100px !important;
+    padding-bottom: 20px !important;
   }
   .main-slider-two__shape-1,
   .main-slider-two__shape-2 {
