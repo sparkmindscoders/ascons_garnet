@@ -2090,7 +2090,7 @@ ul {
 .main-slider-two__content {
   position: relative;
   display: block;
-  text-align: center;
+  text-align: start;
   /* left: 20rem; */
 }
 
@@ -13015,4 +13015,8 @@ z-index: 100000;
 
 
 
-
+.banner-form .form-control:focus {
+  background-color: white;
+  border-color: #ced4da; /* Optional: change border color if needed */
+  outline: none; /* Remove the default outline */
+}
