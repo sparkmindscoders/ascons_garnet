@@ -1120,7 +1120,208 @@ $("#request_qoute_form").validate({
     });
   },
 });
+
+// contact us form
 $("#request_contact_form").validate({
+  rules: {
+    fname: { required: true },
+    lname: { required: true },
+    email: { required: true, email: true },
+    phone: { required: true, minlength: 10, maxlength: 10, digits: true },
+    message: { required: true }
+  },
+  messages: {
+    fname: { required: "Please enter your First Name" },
+    lname: { required: "Please enter your Last Name" },
+    email: {
+      required: "Please enter your email address",
+      email: "Please enter a valid email address",
+    },
+    phone: {
+      required: "Please enter your phone number",
+      minlength: "Phone number must be exactly 10 digits",
+      maxlength: "Phone number must be exactly 10 digits",
+      digits: "Please enter a valid phone number with only digits",
+    },
+    message: { required: "Please enter your Message" }
+  },
+  submitHandler: function (form, event) {
+    // Prevent the form's default submit action (page reload)
+    event.preventDefault();
+
+    // Show SweetAlert loader before the AJAX call starts
+    Swal.fire({
+      title: 'Submitting your request...',
+      text: 'Please wait a moment',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading(); // Show Swal loader
+      },
+    });
+
+    // Create FormData object
+    var formData = new FormData($(form)[0]);
+    $.ajax({
+      type: "POST",
+      url: "/email-temp/contact_mail_send.php",
+      data: formData,
+      contentType: false, // Don't set contentType
+      processData: false, // Don't process data
+      success: function (message) {
+        // Close the loader when the request completes
+        Swal.close();
+
+        console.log(message);
+        if (message === "Mail has been sent successfully!") {
+          Swal.fire("Successful!", "Your message has been sent!", "success");
+          $(form).trigger("reset");
+        } else {
+          Swal.fire("Error", "There was an issue sending your message.", "error");
+        }
+      },
+      error: function (t) {
+        // Close the loader if an error occurs
+        Swal.close();
+        Swal.fire("Error", "Error submitting form: " + t.statusText, "error");
+      },
+    });
+  },
+});
+
+// banner 1
+$("#banner_a_contact_form").validate({
+  rules: {
+    fname: { required: true },
+    lname: { required: true },
+    email: { required: true, email: true },
+    phone: { required: true, minlength: 10, maxlength: 10, digits: true },
+    message: { required: true }
+  },
+  messages: {
+    fname: { required: "Please enter your First Name" },
+    lname: { required: "Please enter your Last Name" },
+    email: {
+      required: "Please enter your email address",
+      email: "Please enter a valid email address",
+    },
+    phone: {
+      required: "Please enter your phone number",
+      minlength: "Phone number must be exactly 10 digits",
+      maxlength: "Phone number must be exactly 10 digits",
+      digits: "Please enter a valid phone number with only digits",
+    },
+    message: { required: "Please enter your Message" }
+  },
+  submitHandler: function (form, event) {
+    // Prevent the form's default submit action (page reload)
+    event.preventDefault();
+
+    // Show SweetAlert loader before the AJAX call starts
+    Swal.fire({
+      title: 'Submitting your request...',
+      text: 'Please wait a moment',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading(); // Show Swal loader
+      },
+    });
+
+    // Create FormData object
+    var formData = new FormData($(form)[0]);
+    $.ajax({
+      type: "POST",
+      url: "/email-temp/contact_mail_send.php",
+      data: formData,
+      contentType: false, // Don't set contentType
+      processData: false, // Don't process data
+      success: function (message) {
+        // Close the loader when the request completes
+        Swal.close();
+
+        console.log(message);
+        if (message === "Mail has been sent successfully!") {
+          Swal.fire("Successful!", "Your message has been sent!", "success");
+          $(form).trigger("reset");
+        } else {
+          Swal.fire("Error", "There was an issue sending your message.", "error");
+        }
+      },
+      error: function (t) {
+        // Close the loader if an error occurs
+        Swal.close();
+        Swal.fire("Error", "Error submitting form: " + t.statusText, "error");
+      },
+    });
+  },
+});
+// banner 2
+$("#banner_b_contact_form").validate({
+  rules: {
+    fname: { required: true },
+    lname: { required: true },
+    email: { required: true, email: true },
+    phone: { required: true, minlength: 10, maxlength: 10, digits: true },
+    message: { required: true }
+  },
+  messages: {
+    fname: { required: "Please enter your First Name" },
+    lname: { required: "Please enter your Last Name" },
+    email: {
+      required: "Please enter your email address",
+      email: "Please enter a valid email address",
+    },
+    phone: {
+      required: "Please enter your phone number",
+      minlength: "Phone number must be exactly 10 digits",
+      maxlength: "Phone number must be exactly 10 digits",
+      digits: "Please enter a valid phone number with only digits",
+    },
+    message: { required: "Please enter your Message" }
+  },
+  submitHandler: function (form, event) {
+    // Prevent the form's default submit action (page reload)
+    event.preventDefault();
+
+    // Show SweetAlert loader before the AJAX call starts
+    Swal.fire({
+      title: 'Submitting your request...',
+      text: 'Please wait a moment',
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading(); // Show Swal loader
+      },
+    });
+
+    // Create FormData object
+    var formData = new FormData($(form)[0]);
+    $.ajax({
+      type: "POST",
+      url: "/email-temp/contact_mail_send.php",
+      data: formData,
+      contentType: false, // Don't set contentType
+      processData: false, // Don't process data
+      success: function (message) {
+        // Close the loader when the request completes
+        Swal.close();
+
+        console.log(message);
+        if (message === "Mail has been sent successfully!") {
+          Swal.fire("Successful!", "Your message has been sent!", "success");
+          $(form).trigger("reset");
+        } else {
+          Swal.fire("Error", "There was an issue sending your message.", "error");
+        }
+      },
+      error: function (t) {
+        // Close the loader if an error occurs
+        Swal.close();
+        Swal.fire("Error", "Error submitting form: " + t.statusText, "error");
+      },
+    });
+  },
+});
+// banner 3
+$("#banner_c_contact_form").validate({
   rules: {
     fname: { required: true },
     lname: { required: true },

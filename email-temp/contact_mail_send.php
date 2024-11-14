@@ -4,6 +4,8 @@ require 'vendor/autoload.php'; // Autoload Composer's dependencies
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+
+
 // Load environment variables
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
@@ -18,7 +20,7 @@ if (isset($_POST['email']) && isset($_POST['fname']) && isset($_POST['lname']) &
     $mail = new PHPMailer(true);
 
     try {
-        //Server settings
+    
         $mail->isSMTP();
         $mail->Host       = $_ENV['MAIL_HOST'];
         $mail->SMTPAuth   = true;
@@ -27,13 +29,13 @@ if (isset($_POST['email']) && isset($_POST['fname']) && isset($_POST['lname']) &
         $mail->SMTPSecure = $_ENV['MAIL_ENCRYPTION'];
         $mail->Port       = $_ENV['MAIL_PORT'];
 
-        //Recipients
+   
         $mail->setFrom($_ENV['MAIL_FROM_ADDRESS'], $_ENV['MAIL_FROM_NAME']);
-        $mail->addAddress($_ENV['MAIL_FROM_ADDRESS']); // Add a recipient email address
-        $mail->addAddress("kcresst28@gmail.com");
-        $mail->addAddress("jasbir64@gmail.com");
+        $mail->addAddress('ascons.ltd@gmail.com');
+        $mail->addAddress('mayududam1999@gmail.com');
+        $mail->addAddress($_ENV['MAIL_FROM_ADDRESS']);
 
-        // Content
+      
         $mail->isHTML(true);
         $mail->Subject = "Connect with us";
         $mail->Body    = $message . "<br><br> Full Name: " . $fname." ". $lname .  "<br>Email: " . $email . "<br>Phone: " . $phone ;
@@ -46,3 +48,4 @@ if (isset($_POST['email']) && isset($_POST['fname']) && isset($_POST['lname']) &
 } else {
     echo 'Please fill in all details';
 }
+
